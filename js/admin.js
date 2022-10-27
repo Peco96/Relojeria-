@@ -12,6 +12,7 @@ let modelo = document.querySelector("#modelo");
 let descripcion = document.querySelector("#descripcion");
 let imagen = document.querySelector("#imagen");
 let precio = document.querySelector("#precio");
+let stock = document.querySelector("#stock");
 let formulario = document.querySelector("#formProducto");
 let productoNuevo = true;
 
@@ -36,6 +37,7 @@ function crearFila(producto) {
     <td>${producto.descripcion}</td>
     <td>${producto.imagen}</td>
     <td>${producto.precio}</td>
+    <td>${producto.stock}</td>
     <td>
       <button class="btn btn-warning" onclick="editarProducto('${producto.codigo}')">
         <i class="bi bi-pencil-square"></i>
@@ -72,7 +74,8 @@ function generarProducto() {
     modelo.value,
     descripcion.value,
     imagen.value,
-    precio.value
+    precio.value,
+    stock.value
   );
 
   listaProductos.push(nuevaProducto);
@@ -100,6 +103,7 @@ function limpiarFormulario() {
   imagen.className = "form-control";
   precio.className = "form-control";
   codigo.className = "form-control";
+  stock.className = "form-control";
 }
 
 function guardarDatosEnLS() {
@@ -155,6 +159,7 @@ window.editarProducto = function (codigoBuscado) {
   descripcion.value = proBuscado.descripcion;
   imagen.value = proBuscado.imagen;
   precio.value = proBuscado.precio;
+   stock.value = proBuscado.stock;
 };
 
 function actualizarProducto() {
@@ -166,7 +171,7 @@ function actualizarProducto() {
   listaProductos[posicionProducto].descripcion = descripcion.value;
   listaProductos[posicionProducto].imagen = imagen.value;
   listaProductos[posicionProducto].precio = precio.value;
-
+  listaProductos[posicionProducto].stock = stock.value;
   guardarDatosEnLS();
 
   actualizarTabla();
