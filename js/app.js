@@ -14,7 +14,7 @@ function crearColumna(producto){
         <h5 class="card-title text-center">${producto.modelo}</h5> 
         <p>$${producto.precio}</p>
         <button class="btn btn-primary" onclick="detalleProducto('${producto.codigo}')">Ver detalle</button>
-        <button class="btn btn-warning">Comprar</button>
+        <a href="./pages/error404.html" class="btn btn-warning "><i class="bi bi-cart2"> Comprar</i></a>
       </div>
     </div>
   </aside>
