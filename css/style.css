@@ -1,5 +1,6 @@
 body{
      background-image: url(../img/Fondo/pexels-andrea-piacquadio-769041.jpg);
      background-size: cover;
+     background-attachment: fixed;
      
 }
