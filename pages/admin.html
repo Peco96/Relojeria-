@@ -22,6 +22,7 @@
     />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css" />
+    
     <title>Administrador</title>
   </head>
   <body>
@@ -63,14 +64,13 @@
       </nav>
     </header>
     <main class="container my-5">
-      <h1 class="display-4 text-center">Lista de Productos</h1>
+      <h1 class="display-4 text-center">Administrador de Productos</h1>
       <hr />
       <section class="d-flex">
         <p class="mb-0">Opciones:</p>
         <button
           class="btn btn-outline-primary btn-sm ms-3"
-          id="btnCrearProducto"
-        >
+        id="btnCrearProducto" >
           <i class="bi bi-clipboard2-plus-fill"></i>
         </button>
       </section>
@@ -86,15 +86,17 @@
                 <th scope="col">Descripcion</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Modelo</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaProductos"></tbody>
+            <tbody id="tablaProducto">
+            </tbody>
+       
           </table>
         </article>
       </section>
-    </main>
-    <!-- Modal para administrar Productos -->
+    
+    <!-- Modal para administrar series -->
     <div
       class="modal fade"
       id="modalProducto"
@@ -130,12 +132,12 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="nombre">Nombre</label>
+                <label for="modelo">Modelo y Marca</label>
                 <input
-                  id="nombre"
+                  id="modelo"
                   type="text"
                   class="form-control"
-                  placeholder="Ej: Casio edifire Red bull"
+                  placeholder="Ej: Casio Edifaire"
                   maxlength="60"
                   minlength="2"
                 />
@@ -146,7 +148,7 @@
                   id="descripcion"
                   rows="4"
                   class="form-control"
-                  placeholder="Ej: El reloj es de acero inoxidable, resistente al agua,etc"
+                  placeholder="Ej: El reloj es resistente al agua, revetido de titanio, etc."
                   maxlength="200"
                   minlength="2"
                 ></textarea>
@@ -157,7 +159,9 @@
                   id="imagen"
                   type="text"
                   class="form-control"
-                  placeholder="Ej:Foto de Krivec Ales: https://www.pexels.com/es-es/foto/reloj-analogico-gris-a-las-10-36-552774/"
+                  placeholder="Ej: Foto de Stas Knop: https://www.pexels.com/es-es/foto/persona-tocando-el-despertador-de-dos-campanas-negro-1198264/"
+                  maxlength="120"
+                  minlength="2"
                 />
               </div>
               <div class="mb-3">
@@ -166,27 +170,15 @@
                   id="precio"
                   type="number"
                   class="form-control"
-                  placeholder="Ej: $10.000"
+                  placeholder="Ej: 10000"
                 />
-              </div>
-              <div class="mb-3">
-                <label for="marca">Marca</label>
-                <select id="marca" class="form-control">
-                  <option value="">Selecione una opcion</option>
-                  <option value="Rolex">Rolex</option>
-                  <option value="Casio">Casio</option>
-                  <option value="Citizen">Citizen</option>
-                  <option value="Aplle">Apple</option>
-                  <option value="Montblanc">Montblanc</option>
-                  <option value="Sapphire">Sapphire</option>
-                </select>
-              </div>
-              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button class="btn btn-primary my-2" type="submit">Enviar</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+  </main>
     <footer class="bg-dark text-light py-4 text-center">
       <p>&copy; Todos los derechos reservados</p>
     </footer>
@@ -196,6 +188,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
-    <script src="../js/admin.js" type="module"></script>
+  <script src="../js/admin.js" type="module"></script>
   </body>
 </html>
