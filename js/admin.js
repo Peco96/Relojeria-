@@ -33,11 +33,11 @@ function crearFila(producto) {
   let tablaProducto = document.querySelector("#tablaProducto");
   tablaProducto.innerHTML += `<tr>
     <th scope="row">${producto.codigo}</th>
-    <td>${producto.modelo}</td>
-    <td>${producto.descripcion}</td>
-    <td>${producto.imagen}</td>
-    <td>${producto.precio}</td>
-    <td>${producto.stock}</td>
+    <td class= fw-bold>${producto.modelo}</td>
+    <td class= fw-bold>${producto.descripcion}</td>
+    <td class= fw-bold>${producto.imagen}</td>
+    <td class= fw-bold>$${producto.precio}</td>
+    <td class= fw-bold>${producto.stock}</td>
     <td>
       <button class="btn btn-warning" onclick="editarProducto('${producto.codigo}')">
         <i class="bi bi-pencil-square"></i>
